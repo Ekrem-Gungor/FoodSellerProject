@@ -1,0 +1,42 @@
+﻿@model Entitiy_Layer.Concrete.Customer
+
+@{
+    ViewData["Title"] = "EditCustomer";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Müşteri Düzenleme Sayfası</h1>
+<br />
+@using (Html.BeginForm("EditCustomer", "Customer", FormMethod.Post))
+{
+    <div class="form-gruop">
+        @Html.Label("Müşteri ID")
+        @Html.TextBoxFor(x=> x.CustomerID, new {@class = "form-control"})
+        <br />
+        @Html.Label("Müşteri Adı")
+        @Html.TextBoxFor(x=> x.CustomerName, new {@class = "form-control"})
+        @Html.ValidationMessageFor(x=> x.CustomerName)
+        <br />
+        @Html.Label("Müşteri Şifresi")
+        @Html.TextBoxFor(x=> x.CustomerPassword, new {@class = "form-control"})
+        @Html.ValidationMessageFor(x=> x.CustomerPassword)
+        <br />
+        @Html.Label("Şirket Adı")
+        @Html.TextBoxFor(x=> x.CompanyName, new {@class = "form-control"})
+        @Html.ValidationMessageFor(x=> x.CompanyName)
+        <br />
+        @Html.Label("Telefon No")
+        @Html.TextBoxFor(x=> x.ContactNo, new {@class = "form-control"})
+        @Html.ValidationMessageFor(x=> x.ContactNo)
+        <br />
+        @Html.Label("Bir Şehir Yazınız")
+        @Html.TextBoxFor(x=> x.City, new {@class = "form-control"})
+        @Html.ValidationMessageFor(x=> x.City)
+        <br />
+        @Html.Label("Müşteri Görsel Linki")
+        @Html.TextBoxFor(x=> x.CustomerImage, new {@class = "form-control"})
+        @Html.ValidationMessageFor(x=> x.CustomerImage)
+        <br /> <br />
+        <button class="btn btn-success">Müşteriyi Düzenle</button>
+    </div>
+}

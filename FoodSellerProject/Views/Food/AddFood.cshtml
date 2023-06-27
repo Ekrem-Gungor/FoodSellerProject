@@ -1,0 +1,34 @@
+﻿@model Entitiy_Layer.Concrete.Foods
+@{
+    ViewData["Title"] = "AddFood";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Yeni Ürün Ekleme Sayfası</h1>
+<br />
+@using (Html.BeginForm("AddFood", "Food", FormMethod.Post))
+{
+    <div class="form-gruop">
+        @Html.Label("Ürün Adı")
+        @Html.TextBoxFor(x=> x.FoodName, new {@class = "form-control"})
+        @Html.ValidationMessageFor(x=> x.FoodName)
+        <br />
+        @Html.Label("Ürün Görsel Linki")
+        @Html.TextBoxFor(x=> x.FoodImage, new {@class = "form-control"})
+        @Html.ValidationMessageFor(x=> x.FoodImage)
+        <br />
+        @Html.Label("Ürün Stoğu")
+        @Html.TextBoxFor(x=> x.FInStock, new {@class = "form-control"})
+        @Html.ValidationMessageFor(x=> x.FInStock)
+        <br />
+        @Html.Label("Ürün Fiyatı")
+        @Html.TextBoxFor(x=> x.FUnitPrice, new {@class = "form-control"})
+        @Html.ValidationMessageFor(x=> x.FUnitPrice)
+        <br />
+        @Html.Label("Ürün'ün Kategorisi")
+        @Html.DropDownListFor(x=> x.CategoryID,(List<SelectListItem>)ViewBag.vlc, new {@class = "form-control"})
+        @Html.ValidationMessageFor(x=> x.CategoryID)
+        <br /> <br />
+        <button class="btn btn-info">Ürün Ekle</button>
+    </div>
+}

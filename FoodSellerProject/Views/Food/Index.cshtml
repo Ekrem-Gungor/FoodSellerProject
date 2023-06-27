@@ -1,0 +1,164 @@
+﻿@using Entitiy_Layer.Concrete
+@model List<Foods>
+@{
+	ViewData["Title"] = "Index";
+	Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+@{string color = "";}
+
+<!DOCTYPE html>
+<html>
+
+<body class="hold-transition sidebar-mini">
+	<!-- Content Header (Page header) -->
+	<section class="content-header">
+		<div class="container-fluid">
+			<div class="row mb-2">
+				<div class="col-sm-6">
+				</div>
+			</div>
+		</div><!-- /.container-fluid -->
+	</section>
+	<!-- Main content -->
+	<section class="content">
+		<!-- Default box -->
+		<div class="card">
+			<div class="card-header">
+				<h3 class="card-title">Ürün İşlemleri</h3>
+				<div class="card-tools">
+					<button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
+						<i class="fas fa-minus"></i>
+					</button>
+					<button type="button" class="btn btn-tool" data-card-widget="remove" data-toggle="tooltip" title="Remove">
+						<i class="fas fa-times"></i>
+					</button>
+				</div>
+			</div>
+			<div class="card-body p-0">
+				<table class="table table-striped projects">
+					<thead>
+						<tr>
+							<th style="width: 1%">
+								#
+							</th>
+							<th style="width: 20%">
+								Ürün Adı
+							</th>
+							<th style="width: 15%">
+								Kategorisi
+							</th>
+							<th style="width: 15%">
+								Ürün Fiyatı
+							</th>
+							<th style="width: 15%">
+								Stok Durumu
+							</th>
+							<th>
+
+							</th>
+						</tr>
+					</thead>
+					<tbody>
+						@foreach (var item in Model)
+						{
+							if (item.Category.CategoryName=="Meyve")
+							{
+								color = "badge badge-warning";
+							}
+							if (item.Category.CategoryName=="Sebze")
+							{
+								color = "badge badge-success";
+							}
+							if (item.Category.CategoryName=="Bakliyat")
+							{
+								color = "badge badge-dark";
+							}
+							if (item.Category.CategoryName=="Süt ve Süt Ürünleri")
+							{
+								color = "badge badge-light";
+							}
+
+							<tr>
+								<td>
+									@item.CategoryID
+								</td>
+								<td>
+									<a>
+										@item.FoodName
+									</a>
+									<br />
+									<small>
+										@DateTime.Now.ToLongDateString();
+									</small>
+								</td>
+								<td>
+									<ul class="list-inline">
+										<li class="list-inline-item">
+											<span class="@color">@item.Category.CategoryName</span>
+											
+											@*<img alt="Avatar" class="table-avatar" src="/dist/img/avatar.png">*@
+										</li>
+									</ul>
+								</td>
+								<td>
+									<span class="badge badge-success">@item.FUnitPrice</span>
+								</td>
+								<td>
+									<span class="badge badge-secondary">@item.FInStock</span>
+								</td>
+								<td class="project-actions text-right">
+									<a class="btn btn-primary btn-sm" href="#">
+										<i class="fas fa-folder">
+										</i>
+										Görüntüle
+									</a>
+									<a class="btn btn-info btn-sm" href="#">
+										<i class="fas fa-pencil-alt">
+										</i>
+										Düzenle
+									</a>
+									<a class="btn btn-danger btn-sm" href="#">
+										<i class="fas fa-trash">
+										</i>
+										Sil
+									</a>
+								</td>
+							</tr>
+						}
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<!-- /food-Insert -->
+	</section>
+</body>
+</html>
+<a href="/Food/AddFood" class="btn btn-info">Yeni Ürün Ekle</a>
+
+@*<h1>Ürün Tablosu</h1>
+<br/>
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>Ürün Adı</th>
+        <th>Ürün Görseli</th>
+        <th>Stoktaki Ürün</th>
+        <th>Ürün Fiyatı</th>
+        <th>Kategori</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.FoodID</td>
+            <td>@item.FoodName</td>
+            <td>@item.FoodImage</td>
+            <td>@item.FInStock</td>
+            <td>@item.FUnitPrice</td>
+            <td>@item.Category.CategoryName</td>
+        </tr>
+    }
+</table>
+<br />
+<a href="/Food/AddFood" class="btn btn-info">Yeni Ürün Ekle</a>
+
+*@
