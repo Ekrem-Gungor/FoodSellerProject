@@ -25,7 +25,7 @@ namespace Businness_Layer.Concrete
 
         public void foodDelete(Foods food)
         {
-            _foodDal.Delete(food);
+            _foodDal.Update(food);
         }
 
         public void foodUpdate(Foods food)

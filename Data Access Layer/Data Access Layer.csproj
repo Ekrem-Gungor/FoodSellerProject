@@ -56,6 +56,7 @@
     <Compile Include="Abstract\IContactDal.cs" />
     <Compile Include="Abstract\ICustomerDal.cs" />
     <Compile Include="Abstract\IFoodDal.cs" />
+    <Compile Include="Abstract\IOrderDal.cs" />
     <Compile Include="Abstract\IRepository.cs" />
     <Compile Include="Concrete\Context.cs" />
     <Compile Include="Concrete\Repositories\GenericRepository.cs" />
@@ -64,6 +65,7 @@
     <Compile Include="EntityFramework\EfContactDal.cs" />
     <Compile Include="EntityFramework\EfCustomerDal.cs" />
     <Compile Include="EntityFramework\EfFoodDal.cs" />
+    <Compile Include="EntityFramework\EfOrderDal.cs" />
     <Compile Include="Migrations\202306261228478_mig1.cs" />
     <Compile Include="Migrations\202306261228478_mig1.designer.cs">
       <DependentUpon>202306261228478_mig1.cs</DependentUpon>
@@ -99,6 +101,58 @@
     <Compile Include="Migrations\202306271124405_mig_cust_addstatus.cs" />
     <Compile Include="Migrations\202306271124405_mig_cust_addstatus.designer.cs">
       <DependentUpon>202306271124405_mig_cust_addstatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202306291058185_mig_edit_foods_and_categorys.cs" />
+    <Compile Include="Migrations\202306291058185_mig_edit_foods_and_categorys.designer.cs">
+      <DependentUpon>202306291058185_mig_edit_foods_and_categorys.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202306291107461_mig_edit_foods.cs" />
+    <Compile Include="Migrations\202306291107461_mig_edit_foods.designer.cs">
+      <DependentUpon>202306291107461_mig_edit_foods.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202306291156519_mig_edit_foods1.cs" />
+    <Compile Include="Migrations\202306291156519_mig_edit_foods1.designer.cs">
+      <DependentUpon>202306291156519_mig_edit_foods1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202306291202363_mig_edit_foods2.cs" />
+    <Compile Include="Migrations\202306291202363_mig_edit_foods2.designer.cs">
+      <DependentUpon>202306291202363_mig_edit_foods2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202306291210022_mig_edit_foods3.cs" />
+    <Compile Include="Migrations\202306291210022_mig_edit_foods3.designer.cs">
+      <DependentUpon>202306291210022_mig_edit_foods3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202306292106339_mig_editandadd_foods.cs" />
+    <Compile Include="Migrations\202306292106339_mig_editandadd_foods.designer.cs">
+      <DependentUpon>202306292106339_mig_editandadd_foods.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202307031636398_mig_add_orderdate.cs" />
+    <Compile Include="Migrations\202307031636398_mig_add_orderdate.designer.cs">
+      <DependentUpon>202307031636398_mig_add_orderdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202307032137361_mig_edit_orders.cs" />
+    <Compile Include="Migrations\202307032137361_mig_edit_orders.designer.cs">
+      <DependentUpon>202307032137361_mig_edit_orders.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202307032139518_mig_add_orders.cs" />
+    <Compile Include="Migrations\202307032139518_mig_add_orders.designer.cs">
+      <DependentUpon>202307032139518_mig_add_orders.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202307032151129_mig_edit_orders1.cs" />
+    <Compile Include="Migrations\202307032151129_mig_edit_orders1.designer.cs">
+      <DependentUpon>202307032151129_mig_edit_orders1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202307032200068_mig_edit_orders2.cs" />
+    <Compile Include="Migrations\202307032200068_mig_edit_orders2.designer.cs">
+      <DependentUpon>202307032200068_mig_edit_orders2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202307040956371_mig_edit_orders3.cs" />
+    <Compile Include="Migrations\202307040956371_mig_edit_orders3.designer.cs">
+      <DependentUpon>202307040956371_mig_edit_orders3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202307040957463_mig_edit_orders4.cs" />
+    <Compile Include="Migrations\202307040957463_mig_edit_orders4.designer.cs">
+      <DependentUpon>202307040957463_mig_edit_orders4.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -140,6 +194,45 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202306271124405_mig_cust_addstatus.resx">
       <DependentUpon>202306271124405_mig_cust_addstatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202306291058185_mig_edit_foods_and_categorys.resx">
+      <DependentUpon>202306291058185_mig_edit_foods_and_categorys.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202306291107461_mig_edit_foods.resx">
+      <DependentUpon>202306291107461_mig_edit_foods.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202306291156519_mig_edit_foods1.resx">
+      <DependentUpon>202306291156519_mig_edit_foods1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202306291202363_mig_edit_foods2.resx">
+      <DependentUpon>202306291202363_mig_edit_foods2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202306291210022_mig_edit_foods3.resx">
+      <DependentUpon>202306291210022_mig_edit_foods3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202306292106339_mig_editandadd_foods.resx">
+      <DependentUpon>202306292106339_mig_editandadd_foods.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202307031636398_mig_add_orderdate.resx">
+      <DependentUpon>202307031636398_mig_add_orderdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202307032137361_mig_edit_orders.resx">
+      <DependentUpon>202307032137361_mig_edit_orders.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202307032139518_mig_add_orders.resx">
+      <DependentUpon>202307032139518_mig_add_orders.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202307032151129_mig_edit_orders1.resx">
+      <DependentUpon>202307032151129_mig_edit_orders1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202307032200068_mig_edit_orders2.resx">
+      <DependentUpon>202307032200068_mig_edit_orders2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202307040956371_mig_edit_orders3.resx">
+      <DependentUpon>202307040956371_mig_edit_orders3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202307040957463_mig_edit_orders4.resx">
+      <DependentUpon>202307040957463_mig_edit_orders4.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -53,7 +53,6 @@
   <ItemGroup>
     <Compile Include="Concrete\About.cs" />
     <Compile Include="Concrete\Category.cs" />
-    <Compile Include="Concrete\Categoryİmage.cs" />
     <Compile Include="Concrete\Contact.cs" />
     <Compile Include="Concrete\Customer.cs" />
     <Compile Include="Concrete\Foods.cs" />

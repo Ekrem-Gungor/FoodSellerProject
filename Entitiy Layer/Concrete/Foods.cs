@@ -13,17 +13,22 @@ namespace Entitiy_Layer.Concrete
         public int FoodID { get; set; }
         [StringLength(50)]
         public string FoodName { get; set; }
-        [StringLength(250)]
-        public string FoodImage { get; set; }
         [StringLength(100)]
         public string FInStock { get; set; }
         [StringLength(100)]
         public string FUnitPrice { get; set; }
+        public DateTime FoodLCD { get; set; } /*(Son Tütekim Tarihi)*/
+        public DateTime FoodSLT { get; set; } /*(Raf Ömrü Tarihi)*/
+        public DateTime FoodPDate { get; set; } /*(Üretim Tarihi)*/
+
         public bool FoodStatus { get; set; }
 
 
-        public int CategoryID { get; set; }
+		public int CategoryID { get; set; }
         public virtual Category Category { get; set; }
 
-    }
+
+		public ICollection<Orders> Orders { get; set; }
+
+	}
 }

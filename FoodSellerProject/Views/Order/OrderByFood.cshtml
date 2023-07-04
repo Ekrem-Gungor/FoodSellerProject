@@ -1,0 +1,43 @@
+﻿@using Entitiy_Layer.Concrete
+@model List<Orders>
+@{
+	ViewData["Title"] = "OrderByFood";
+	Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<!DOCTYPE html>
+<html>
+<body class="hold-transition sidebar-mini">
+	<!-- Site wrapper -->
+	<div class="wrapper">
+		<section class="content">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="timeline">
+							@foreach (var item in Model)
+							{
+								<div class="time-label">
+									<span class="bg-success">@(((DateTime)item.OrderDate).ToString("dd-MMM-yyyy"))</span>
+								</div>
+								<div>
+									<i class="fas fa-comment bg-yellow"></i>
+									<div class="timeline-item">
+										<h3 class="timeline-header"><a href="#">@item.Customer.CustomerName // @item.Customer.CompanyName</a> </h3>
+										<div class="timeline-body">
+											<b>Ürün Adı : </b>@item.Foods.FoodName <br />
+											<b>Sipariş Açıklaması : </b>@item.OrderDetails <br />
+											<b>Ürün Görseli : </b> (Temsilidir..Buraya Ürünün Görseli gelecek) <br />
+											<img alt="Avatar" class="note-icon-table" src="@item.Foods.Category.CategoryImageURL"> 
+										</div>
+									</div>
+								</div>
+							}
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</div>
+</body>
+</html>

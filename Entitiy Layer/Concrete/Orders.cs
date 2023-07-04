@@ -15,10 +15,16 @@ namespace Entitiy_Layer.Concrete
         public string OrderName { get; set; }
         [StringLength(200)]
         public string OrderDetails { get; set; }
-        [StringLength(200)]
-        public string Orderİmage { get; set; }
+        public DateTime OrderDate { get; set; }
         public string OrderStatus { get; set; }
 
-        
-    }
+
+		public int CustomerID { get; set; }
+		public virtual Customer Customer { get; set; }
+
+		
+		public int FoodID { get; set; }
+		public virtual Foods Foods { get; set; }
+
+	}
 }

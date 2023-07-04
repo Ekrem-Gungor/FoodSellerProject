@@ -5,6 +5,12 @@
 	Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 @{string color = "";}
+@{string statuscolor = "";}
+@{string statusset = "";}
+@{string statussetcolor = "";}
+@{string date = "";}
+@{string image = "";}
+
 
 <!DOCTYPE html>
 <html>
@@ -38,9 +44,6 @@
 				<table class="table table-striped projects">
 					<thead>
 						<tr>
-							<th style="width: 1%">
-								#
-							</th>
 							<th style="width: 20%">
 								Ürün Adı
 							</th>
@@ -48,19 +51,21 @@
 								Kategorisi
 							</th>
 							<th style="width: 15%">
+								Durum
+							</th>
+							<th style="width: 15%">
 								Ürün Fiyatı
 							</th>
 							<th style="width: 15%">
 								Stok Durumu
-							</th>
-							<th>
-
 							</th>
 						</tr>
 					</thead>
 					<tbody>
 						@foreach (var item in Model)
 						{
+							@*<--------------------------------->*@
+							@*Kategori Renkleri*@
 							if (item.Category.CategoryName=="Meyve")
 							{
 								color = "badge badge-warning";
@@ -76,29 +81,83 @@
 							if (item.Category.CategoryName=="Süt ve Süt Ürünleri")
 							{
 								color = "badge badge-light";
-							}
+							};
+							@*<--------------------------------->*@
 
+							@*Durum Classı*@
+							@*<+++++++++++++++++++++++++++++++++>*@
+							if (item.FoodStatus == true)
+							{
+								statuscolor = "badge badge-info";
+							}
+							if (item.FoodStatus == false)
+							{
+								statuscolor = "badge badge-danger";
+							}
+							if (item.FoodStatus == true)
+							{
+								statussetcolor = "btn btn-danger btn-sm";
+								statusset = "Pasif";
+							}
+							if (item.FoodStatus == false)
+							{
+								statussetcolor = "btn btn-warning btn-sm";
+								statusset = "Aktif";
+							}
+							@*<+++++++++++++++++++++++++++++++++>*@
+
+							@*Ürün Tarihleri*@
+							@*<*********************************>*@
+							if (item.Category.CategoryName == "Meyve")
+							{
+								date = "Raf Ömrü : " + (((DateTime)item.FoodSLT).ToString("dd - MMM - yyyy"));
+							}
+							if (item.Category.CategoryName == "Sebze")
+							{
+								date = "Raf Ömrü : " + (((DateTime)item.FoodSLT).ToString("dd - MMM - yyyy"));
+							}
+							if (item.Category.CategoryName == "Bakliyat")
+							{
+								date = "Üretim Tarihi : " + (((DateTime)item.FoodPDate).ToString("dd - MMM - yyyy"));
+							}
+							if (item.Category.CategoryName == "Süt ve Süt Ürünleri")
+							{
+								date = "STT : " + (((DateTime)item.FoodLCD).ToString("dd - MMM - yyyy"));
+
+							};
+							@*<*********************************>*@
+
+							@*Kategori Görselleri*@
+							@*<.................................>*@
+							if (item.Category.CategoryName == item.FoodName)
+							{
+								image = item.Category.CategoryImageURL;
+							}
+							@*<..................................>*@
+							
 							<tr>
 								<td>
-									@item.CategoryID
-								</td>
-								<td>
 									<a>
-										@item.FoodName
+										@item.FoodName <img alt="Avatar" class="note-icon-table" src="@item.Category.CategoryImageURL">
 									</a>
 									<br />
 									<small>
-										@DateTime.Now.ToLongDateString();
+										@*@(((DateTime)item.FoodLCD).ToString("dd-MMM-yyyy"));<br />*@
+										@date
+										@*@(((DateTime)item.FoodPDate).ToString("dd-MMM-yyyy"));<br />*@
 									</small>
 								</td>
 								<td>
 									<ul class="list-inline">
 										<li class="list-inline-item">
 											<span class="@color">@item.Category.CategoryName</span>
-											
-											@*<img alt="Avatar" class="table-avatar" src="/dist/img/avatar.png">*@
+
+											@*<img alt="Avatar" class="table-avatar" src="@item.Category.CategoryImageURL">*@
 										</li>
 									</ul>
+								</td>
+								<td>
+									<span class="@statuscolor">@item.FoodStatus</span>
 								</td>
 								<td>
 									<span class="badge badge-success">@item.FUnitPrice</span>
@@ -106,21 +165,15 @@
 								<td>
 									<span class="badge badge-secondary">@item.FInStock</span>
 								</td>
-								<td class="project-actions text-right">
-									<a class="btn btn-primary btn-sm" href="#">
-										<i class="fas fa-folder">
-										</i>
-										Görüntüle
+								<td class="project-actions text-center">
+									<a class="btn btn-primary btn-sm" href="/Order/OrderByFood/@item.FoodID">
+										Siparişler
 									</a>
-									<a class="btn btn-info btn-sm" href="#">
-										<i class="fas fa-pencil-alt">
-										</i>
+									<a class="btn btn-info btn-sm" href="/Food/EditFood/@item.FoodID">
 										Düzenle
 									</a>
-									<a class="btn btn-danger btn-sm" href="#">
-										<i class="fas fa-trash">
-										</i>
-										Sil
+									<a class="@statussetcolor" href="/Food/DeleteFood/@item.FoodID">
+										@statusset
 									</a>
 								</td>
 							</tr>
@@ -134,31 +187,3 @@
 </body>
 </html>
 <a href="/Food/AddFood" class="btn btn-info">Yeni Ürün Ekle</a>
-
-@*<h1>Ürün Tablosu</h1>
-<br/>
-<table class="table table-bordered">
-    <tr>
-        <th>ID</th>
-        <th>Ürün Adı</th>
-        <th>Ürün Görseli</th>
-        <th>Stoktaki Ürün</th>
-        <th>Ürün Fiyatı</th>
-        <th>Kategori</th>
-    </tr>
-    @foreach (var item in Model)
-    {
-        <tr>
-            <td>@item.FoodID</td>
-            <td>@item.FoodName</td>
-            <td>@item.FoodImage</td>
-            <td>@item.FInStock</td>
-            <td>@item.FUnitPrice</td>
-            <td>@item.Category.CategoryName</td>
-        </tr>
-    }
-</table>
-<br />
-<a href="/Food/AddFood" class="btn btn-info">Yeni Ürün Ekle</a>
-
-*@

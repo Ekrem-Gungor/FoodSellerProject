@@ -33,9 +33,36 @@ namespace FoodSellerProject.Controllers
             fm.foodAdd(p);
             return RedirectToAction("Index");
         }
-        public IActionResult OrderByFood()
+
+        [HttpGet]
+        public IActionResult EditFood(int id) 
         {
-            return View();
+			List<SelectListItem> valuecategory = (from x in cm.GetList()
+												  select new SelectListItem
+												  {
+													  Text = x.CategoryName,
+													  Value = x.CategoryID.ToString()
+												  }).ToList();
+			ViewBag.vlc = valuecategory;
+
+			var foodvalues = fm.GetByID(id);
+            return View(foodvalues);
         }
-    }
+        [HttpPost]
+		public IActionResult EditFood(Foods p)
+        {
+			fm.foodUpdate(p);
+			return RedirectToAction("Index");
+		}
+
+        public IActionResult DeleteFood(int id)
+        {
+            var foodvalues= fm.GetByID(id);
+            foodvalues.FoodStatus = false;
+            fm.foodDelete(foodvalues);
+            return RedirectToAction("Index");
+        }
+
+
+	}
 }

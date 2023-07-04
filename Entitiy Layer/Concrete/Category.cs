@@ -15,10 +15,11 @@ namespace Entitiy_Layer.Concrete
         public string CategoryName { get; set; }
         [StringLength(200)]
         public string CDescription { get; set; }
+        [StringLength(250)]
+        public string CategoryImageURL { get; set; }
         public bool CStatus { get; set; }
-
 
         public ICollection<Foods> Foods { get; set; }
 
-    }
+	}
 }

@@ -25,6 +25,6 @@ namespace Entitiy_Layer.Concrete
         public string City { get; set; }
         public bool CustStatus { get; set; }
 
-
-    }
+		public ICollection<Orders> Orders { get; set; }
+	}
 }

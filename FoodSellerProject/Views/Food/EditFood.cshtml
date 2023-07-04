@@ -1,0 +1,46 @@
+﻿@model Entitiy_Layer.Concrete.Foods
+@{
+	ViewData["Title"] = "EditFood";
+	Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Ürün Güncelleme Sayfası</h1>
+
+@using (Html.BeginForm("EditFood", "Food", FormMethod.Post))
+{
+	<div class="form-gruop">
+		@Html.Label("Ürün ID")
+		@Html.TextBoxFor(x=> x.FoodID, new {@class = "form-control"})
+		@Html.ValidationMessageFor(x=> x.FoodID)
+		<br />
+		@Html.Label("Ürün Adı")
+		@Html.TextBoxFor(x=> x.FoodName, new {@class = "form-control"})
+		@Html.ValidationMessageFor(x=> x.FoodName)
+		<br />
+		@Html.Label("Ürün'ün Raf Ömrü")
+		@Html.TextBoxFor(x=> x.FoodSLT, new {@class = "form-control"})
+		@Html.ValidationMessageFor(x=> x.FoodSLT)
+		<br />
+		@Html.Label("Ürün'ün STT")
+		@Html.TextBoxFor(x=> x.FoodLCD, new {@class = "form-control"})
+		@Html.ValidationMessageFor(x=> x.FoodLCD)
+		<br />
+		@Html.Label("Ürün'ün Üretim Tarihi")
+		@Html.TextBoxFor(x=> x.FoodPDate, new {@class = "form-control"})
+		@Html.ValidationMessageFor(x=> x.FoodPDate)
+		<br />
+		@Html.Label("Ürün'ün Fiyatı")
+		@Html.TextBoxFor(x=> x.FUnitPrice, new {@class = "form-control"})
+		@Html.ValidationMessageFor(x=> x.FUnitPrice)
+		<br />
+		@Html.Label("Ürün'ün Stok Durumu")
+		@Html.TextBoxFor(x=> x.FInStock, new {@class = "form-control"})
+		@Html.ValidationMessageFor(x=> x.FInStock)
+		<br />
+		@Html.Label("Categori Adı")
+		@Html.DropDownListFor(x=> x.CategoryID,(List<SelectListItem>)ViewBag.vlc, new {@class= "form-control" })
+		<br /> <br />
+		<button class="btn btn-success">Ürün'ü Düzenle</button>
+	</div>
+}
+

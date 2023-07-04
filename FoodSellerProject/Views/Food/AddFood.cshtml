@@ -1,4 +1,6 @@
-﻿@model Entitiy_Layer.Concrete.Foods
+﻿@using Entitiy_Layer.Concrete
+@model Entitiy_Layer.Concrete.Foods
+
 @{
     ViewData["Title"] = "AddFood";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
@@ -13,10 +15,6 @@
         @Html.TextBoxFor(x=> x.FoodName, new {@class = "form-control"})
         @Html.ValidationMessageFor(x=> x.FoodName)
         <br />
-        @Html.Label("Ürün Görsel Linki")
-        @Html.TextBoxFor(x=> x.FoodImage, new {@class = "form-control"})
-        @Html.ValidationMessageFor(x=> x.FoodImage)
-        <br />
         @Html.Label("Ürün Stoğu")
         @Html.TextBoxFor(x=> x.FInStock, new {@class = "form-control"})
         @Html.ValidationMessageFor(x=> x.FInStock)
@@ -24,6 +22,18 @@
         @Html.Label("Ürün Fiyatı")
         @Html.TextBoxFor(x=> x.FUnitPrice, new {@class = "form-control"})
         @Html.ValidationMessageFor(x=> x.FUnitPrice)
+        <br />
+        @Html.Label("Üretim Tarihi")
+        @Html.TextBoxFor(x=> x.FoodPDate, new {@class = "form-control"})
+        @Html.ValidationMessageFor(x=> x.FoodPDate)
+        <br />
+        @Html.Label("Son Tütekim Tarihi")
+        @Html.TextBoxFor(x=> x.FoodLCD, new {@class = "form-control"})
+        @Html.ValidationMessageFor(x=> x.FoodLCD)
+        <br />
+        @Html.Label("Raf Ömrü")
+        @Html.TextBoxFor(x=> x.FoodSLT, new {@class = "form-control"})
+        @Html.ValidationMessageFor(x=> x.FoodSLT)
         <br />
         @Html.Label("Ürün'ün Kategorisi")
         @Html.DropDownListFor(x=> x.CategoryID,(List<SelectListItem>)ViewBag.vlc, new {@class = "form-control"})
