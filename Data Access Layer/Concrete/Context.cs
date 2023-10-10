@@ -1,4 +1,5 @@
 ﻿using Entitiy_Layer.Concrete;
+using EntitiyLayer.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -15,5 +16,7 @@ namespace Data_Access_Layer.Concrete
         public DbSet<Contact> Contacts { get; set; }
         public DbSet<Customer> Customers { get; set; }
         public DbSet<Foods> Foods { get; set; }
-	}
+        public DbSet <Message> Messages { get; set; }
+        public DbSet <ImageFile> ImageFiles { get; set; }
+    }
 }

@@ -1,11 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Entitiy_Layer.Concrete
+namespace EntitiyLayer.Concrete
 {
     public class Contact
     {
@@ -17,7 +13,7 @@ namespace Entitiy_Layer.Concrete
         public string UserMail { get; set; }
         [StringLength(50)]
         public string Subject { get; set; }
-
+        public DateTime ContactDate { get; set; }
         public string Message { get; set; }
 
     }

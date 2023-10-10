@@ -18,6 +18,8 @@ namespace Entitiy_Layer.Concrete
         [StringLength(150)]
         public string CustomerPassword { get; set; }
         [StringLength(50)]
+        public string CustomerMail { get; set; }
+        [StringLength(50)]
         public string ContactNo { get; set; }
         [StringLength(50)]
         public string CompanyName { get; set; }

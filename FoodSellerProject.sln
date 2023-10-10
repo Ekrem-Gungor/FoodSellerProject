@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.33801.468
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FoodSellerProject", "FoodSellerProject\FoodSellerProject.csproj", "{DCE11C02-4111-4F27-A227-4869E08FA034}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FoodSellerProject", "FoodSellerProject\FoodSellerProject.csproj", "{DCE11C02-4111-4F27-A227-4869E08FA034}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entitiy Layer", "Entitiy Layer\Entitiy Layer.csproj", "{72E3E544-AD7B-48A4-8B84-0D063692B191}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntitiyLayer", "Entitiy Layer\EntitiyLayer.csproj", "{72E3E544-AD7B-48A4-8B84-0D063692B191}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Business Layer", "Businness Layer\Business Layer.csproj", "{49B677A5-9A66-46A8-A175-6EFC3D6D7F6C}"
 EndProject

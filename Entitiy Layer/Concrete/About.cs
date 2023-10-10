@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Entitiy_Layer.Concrete
+namespace EntitiyLayer.Concrete
 {
     public class About
     {

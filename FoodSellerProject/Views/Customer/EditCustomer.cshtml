@@ -21,6 +21,10 @@
         @Html.TextBoxFor(x=> x.CustomerPassword, new {@class = "form-control"})
         @Html.ValidationMessageFor(x=> x.CustomerPassword)
         <br />
+        @Html.Label("Müşteri Mail")
+        @Html.TextBoxFor(x=> x.CustomerMail, new {@class = "form-control"})
+        @Html.ValidationMessageFor(x=> x.CustomerMail)
+        <br />
         @Html.Label("Şirket Adı")
         @Html.TextBoxFor(x=> x.CompanyName, new {@class = "form-control"})
         @Html.ValidationMessageFor(x=> x.CompanyName)

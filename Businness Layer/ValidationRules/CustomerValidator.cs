@@ -16,6 +16,8 @@ namespace Businness_Layer.ValidationRules
             RuleFor(x => x.CompanyName).NotEmpty().WithMessage("Lütfen Şirket Adını Boş Bırakmayınız!");
             RuleFor(x => x.CustomerPassword).NotEmpty().WithMessage("Lütfen Şifreyi Boş Bırakmayınız!");
             RuleFor(x => x.CustomerPassword).MinimumLength(5).WithMessage("Lütfen en az 5 karakterden fazla değer girişi yapınız!");
+            RuleFor(x => x.CustomerMail).NotEmpty().WithMessage("Lütfen Maili Boş Bırakmayınız!");
+            RuleFor(x => x.CustomerMail).MinimumLength(15).WithMessage("Lütfen en az 15 karakterden fazla değer girişi yapınız!");
             RuleFor(x => x.ContactNo).MaximumLength(11).WithMessage("Lütfen 11 karakterli bir telefon numarası girişi yapınız!");
             RuleFor(x => x.City).MinimumLength(3).WithMessage("Lütfen en az 3 karakterden fazla değer girişi yapınız!");
             RuleFor(x => x.City).MaximumLength(20).WithMessage("Lütfen 20 karakterden fazla değer girişi yapmayınız!");

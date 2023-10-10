@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Businness_Layer.Abstract
 {
-    public interface ICustomerService
+    public interface IContacaService
     {
         List<Customer> GetList();
         void CustAdd(Customer customer);

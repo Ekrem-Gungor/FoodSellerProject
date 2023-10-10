@@ -10,11 +10,11 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>Toptancı Projesi</title>
     <!-- Font Awesome Icons -->
-    <link rel="stylesheet" href="~/css/all.min.css">
+    <link rel="stylesheet" href="~/AdminLTE-3.0.4/plugins/fontawesome-free/css/all.min.css">
     <!-- IonIcons -->
     <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <!-- Theme style -->
-    <link rel="stylesheet" href="~/css/adminlte.min.css">
+    <link rel="stylesheet" href="~/AdminLTE-3.0.4/dist/css/adminlte.min.css">
     <!-- Google Font: Source Sans Pro -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 </head>
@@ -25,7 +25,7 @@
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
             <!-- Brand Logo -->
             <a href="index3.html" class="brand-link">
-                <img src="~/img/AdminLTELogo.png" alt="Admin Logo" class="brand-image img-circle elevation-3"
+                <img src="~/AdminLTE-3.0.4/dist/img/AdminLTELogo.png" alt="Admin Logo" class="brand-image img-circle elevation-3"
                      style="opacity: .8">
                 <span class="brand-text font-weight-light">Admin Panel</span>
             </a>
@@ -34,7 +34,7 @@
                 <!-- Sidebar user panel (optional) -->
                 <div class="user-panel mt-3 pb-3 mb-3 d-flex">
                     <div class="image">
-                        <img src="~/img/kisisel_logo.png" class="img-circle elevation-2" alt="Ekrew Image">
+                        <img src="~/AdminLTE-3.0.4/dist/img/kisisel_logo.png" class="img-circle elevation-2" alt="Ekrew Image">
                     </div>
                     <div class="info">
                         <a href="https://github.com/EkreW" class="d-block">Github/Ekrew</a>
@@ -47,6 +47,7 @@
                         with font-awesome or any other icon font library -->
                         <li class="nav-item has-treeview">
                             <a href="/AdminCategory/Index/" class="nav-link">
+                                <i class="nav-icon fas fa-tachometer-alt"></i>
                                 <p>
                                     Kategoriler
                                 </p>
@@ -54,6 +55,7 @@
                         </li>
                         <li class="nav-item">
                             <a href="/Food/Index/" class="nav-link">
+                                <i class="nav-icon fas fa-th"></i>
                                 <p>
                                     Ürünler
                                 </p>
@@ -61,6 +63,7 @@
                         </li>
                         <li class="nav-item has-treeview">
                             <a href="#" class="nav-link">
+                                <i class="nav-icon fas fa-copy"></i>
                                 <p>
                                     Siparişler
                                 </p>
@@ -68,6 +71,7 @@
                         </li>
                         <li class="nav-item has-treeview">
                             <a href="/Customer/Index/" class="nav-link">
+                                <i class="nav-icon fas fa-address-card"></i>
                                 <p>
                                     Müşterilerimiz
                                 </p>
@@ -75,6 +79,7 @@
                         </li>
                         <li class="nav-item has-treeview">
                             <a href="#" class="nav-link">
+                                <i class="nav-icon fas fa-chart-pie"></i>
                                 <p>
                                     Grafikler
                                     <i class="right fas fa-angle-left"></i>
@@ -82,31 +87,36 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="~/pages/grafikler/chartjs.html" class="nav-link">
+                                    <a href="~/AdminLTE-3.0.4/pages/charts/chartjs.html" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
                                         <p>Grafik 1</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="~/pages/grafikler/flot.html" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
                                         <p>Grafik 2</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="~/pages/grafikler/inline.html" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
                                         <p>Grafik 3</p>
                                     </a>
                                 </li>
                             </ul>
                         </li>
                         <li class="nav-item has-treeview">
-                            <a href="#" class="nav-link">
+                            <a href="/About/Index/" class="nav-link">
+                                <i class="nav-icon fas fa-paragraph"></i>
                                 <p>
                                     Hakkımızda
                                 </p>
                             </a>
                         </li>
                         <li class="nav-item has-treeview">
-                            <a href="#" class="nav-link">
+                            <a href="/Contact/Index" class="nav-link">
+                                <i class="nav-icon fas fa-edit"></i>
                                 <p>
                                     İletişim & Mesajlar
                                 </p>
@@ -114,13 +124,15 @@
                         </li>
                         <li class="nav-item">
                             <a href="~/pages/calendar.html" class="nav-link">
+                                <i class="nav-icon fas fa-calendar-alt"></i>
                                 <p>
                                     Yetkilendirmeler
                                 </p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="~/pages\html\gallery.html" class="nav-link">
+                            <a href="~/Gallery/Index" class="nav-link">
+                                <i class="nav-icon far fa-image"></i>
                                 <p>
                                     Galeri
                                 </p>
@@ -128,6 +140,7 @@
                         </li>
                         <li class="nav-item has-treeview">
                             <a href="#" class="nav-link">
+                                <i class="nav-icon far fa-envelope"></i>
                                 <p>
                                     Hata Sayfaları
                                     <i class="fas fa-angle-left right"></i>
@@ -136,6 +149,7 @@
                         </li>
                         <li class="nav-item has-treeview">
                             <a href="#" class="nav-link">
+                                <i class="nav-icon fas fa-search"></i>
                                 <p>
                                     Siteye Git
                                 </p>
@@ -144,6 +158,7 @@
                         </li>
                         <li class="nav-item has-treeview">
                             <a href="#" class="nav-link">
+                                <i class="nav-icon fas fa-sign-out-alt"></i>
                                 <p>
                                     Çıkış yap
                                 </p>
@@ -170,14 +185,14 @@
     <!-- ./wrapper -->
     <!-- REQUIRED SCRIPTS -->
     <!-- jQuery -->
-    <script src="~/plugins\jquery\jquery.min.js"></script>
+    @* <script src="~/AdminLTE-3.0.4/plugins\jquery\jquery.min.js"></script> *@
     <!-- Bootstrap -->
-    <script src="~/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="~/AdminLTE-3.0.4/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
     <!-- AdminLTE -->
-    <script src="~/dist/js/adminlte.js"></script>
+    <script src="~/AdminLTE-3.0.4/dist/js/adminlte.js"></script>
     <!-- OPTIONAL SCRIPTS -->
-    <script src="~/plugins/chart.js/Chart.min.js"></script>
-    <script src="~/dist/js/demo.js"></script>
-    <script src="~/dist/js/pages/dashboard3.js"></script>
+    <script src="~/AdminLTE-3.0.4/plugins/chart.js/Chart.min.js"></script>
+    <script src="~/AdminLTE-3.0.4/dist/js/demo.js"></script>
+    <script src="~/AdminLTE-3.0.4/dist/js/pages/dashboard3.js"></script>
 </body>
 </html>
